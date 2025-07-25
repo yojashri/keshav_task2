@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Team - MyProduct</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+   body {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('https://wallpaperaccess.com/full/656665.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #000;
+  overflow-x: hidden;
+}
+
+/* Dark and blurred overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+  backdrop-filter: blur(4px);          /* blur effect */
+  z-index: -1;
+}
+
+/* Dark mode optional overlay darker */
+body.dark-mode::before {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+    .card {
+      background-color: #fff;
+      color: #000;
+      border-color: #ddd;
+    }
+
+  body.dark-mode .navbar,
+    body.dark-mode footer {
+      background-color: #000 !important;
+    }
+
+    body.dark-mode .card {
+      background-color: #1e1e1e;
+      color: #fff;
+      border-color: #333;
+    }
+
+    body.dark-mode .btn-outline-dark {
+           color: #fff;
+      border-color: #fff;
+    }
+
+    .header-section {
+      background-color: transparent !important;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">MyProduct</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+  <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link active" href="team.html">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="feedback.html">feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+   <li class="nav-item">
+          <button class="btn btn-sm btn-outline-light ms-3" id="themeToggle">Toggle Mode</button>
+        </li>
+   </ul>
+    </div>
+  </div>
+</nav>
+<section class="py-5 text-center header-section">
+  <div class="container">
+    <h1 class="display-5">Meet Our Team</h1>
+    <p class="lead">Talented, passionate, and ready to make a difference.</p>
+  </div>
+</section>
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 text-center">
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Team Member">
+          <div class="card-body">
+            <h5 class="card-title">Aarav Sharma</h5>
+            <p class="card-text">Founder & CEO</p>
+            <p class="text-muted">Visionary leader with 10+ years in tech innovation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Team Member">
+          <div class="card-body">
+            <h5 class="card-title">Diya Mehta</h5>
+            <p class="card-text">Head of Marketing</p>
+            <p class="text-muted">Brand strategist and digital marketing expert.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Team Member">
+          <div class="card-body">
+            <h5 class="card-title">Rohan Verma</h5>
+            <p class="card-text">CTO</p>
+            <p class="text-muted">Tech architect behind our smart platform.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer class="bg-dark text-white text-center py-3">
+  <p class="mb-0">© 2025 MyProduct. All rights reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const toggleBtn = document.getElementById('themeToggle');
+  if (localStorage.getItem('dark-mode') === 'true') {
+    document.body.classList.add('dark-mode');
+  }
+  toggleBtn?.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
+  });
+</script>
+
+</body>
+</html>
